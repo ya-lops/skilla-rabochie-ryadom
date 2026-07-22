@@ -42,29 +42,29 @@ const workTime = [
           <div class="flex flex-col gap-4">
             {
               brandData.main.site_phone && (
-                <a class="typo-t1 text-text-primary-inverse hover:underline!" href={`tel:${brandData.main.site_phone}`}>
+                <a class="typo-t1 text-text-primary hover:underline!" href={`tel:${brandData.main.site_phone}`}>
                   {brandData.main.site_phone}
                 </a>
               )
             }
             {
               brandData.main.site_phone2 && (
-                <a class="typo-t1 text-text-primary-inverse hover:underline!" href={`tel:${brandData.main.site_phone2}`}>
+                <a class="typo-t1 text-text-primary hover:underline!" href={`tel:${brandData.main.site_phone2}`}>
                   {brandData.main.site_phone2}
                 </a>
               )
             }
 
-            <a class="text-text-tertiary-inverse hover:underline!" href={`mailto:${brandData.main.site_email}`}
+            <a class="text-text-primary hover:underline!" href={`mailto:${brandData.main.site_email}`}
               >{brandData.main.site_email}</a
             >
           </div>
 
-          <BlockMessengersLinks {brandData} class="text-text-secondary-inverse"/>
+          <BlockMessengersLinks {brandData} class="text-text-secondary"/>
 
           {
             workTime && (
-              <div class="text-text-tertiary-inverse">
+              <div class="text-text-tertiary">
                 {workTime.map((i: any) => (
                   <p class="not:last:mb-1">
                     {i.text}: {i.value}

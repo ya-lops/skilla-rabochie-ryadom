@@ -17,7 +17,6 @@
   font-weight: 600;
   font-size: clamp(1.875rem, 0.9067rem + 4.1315vw, 4.625rem);
   line-height: 110%;
-  text-align: center;
 }
 
 @utility typo-h2 {
@@ -25,7 +24,6 @@
   font-weight: 600;
   font-size: clamp(1.5rem, 0.7518rem + 3.1925vw, 3.625rem);
   line-height: 120%;
-  text-align: center;
 }
 
 @utility typo-h3 {
@@ -33,7 +31,6 @@
   font-weight: 700;
   font-size: clamp(1.25rem, 0.9419rem + 1.3146vw, 2.125rem);
   line-height: 120%;
-  text-align: center;
 }
 
 @utility typo-h4 {
@@ -41,7 +38,6 @@
   font-weight: 700;
   font-size: clamp(1.125rem, 0.993rem + 0.5634vw, 1.5rem);
   line-height: 120%;
-  text-align: center;
 }
 
 @utility typo-h5 {

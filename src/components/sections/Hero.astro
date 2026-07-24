@@ -18,12 +18,12 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
   type == "main" && (
     <>
       <section
-        class="hero grid grid-cols-[100%] min-h-[730px] bg-hero-main-surface text-hero-main-text overflow-clip isolate"
+        class="hero grid grid-cols-[100%] min-h-[500px] lg:min-h-[630px] bg-hero-main-surface text-hero-main-text overflow-clip isolate"
         data-cmp="Hero"
       >
         <div class="container h-full">
-          <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center h-full py-8">
-            <div class="_hero-content flex flex-col gap-10">
+          <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-[2fr_3fr] items-start lg:items-center h-full ">
+            <div class="_hero-content flex flex-col gap-5 lg:gap-10 py-8">
               <div class="flex gap-2.5 items-center">
                 <IconSvg name="location" size={24} />
                 <span>Москва</span>
@@ -35,12 +35,12 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
 
               <div class="_hero-actions flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8">
                 <div class="_hero-actions-items">
-                  <Button href="#contact" variant="accent" text="Получить КП" />
+                  <Button href="#kp" variant="accent" text="Получить КП" />
                 </div>
               </div>
             </div>
-            <div class="_hero-image">
-              <img class="scale-200 md:scale-125 lg:scale-none" src="/images/hero-main.webp" alt="" fetchpriority="high" />
+            <div class="_hero-image self-end">
+              <img class="pointer-events-none" src="/images/hero-main.webp" alt="" fetchpriority="high" />
             </div>
           </div>
         </div>
@@ -55,20 +55,20 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
   type == "about" && (
     <>
       <section
-        class="hero grid grid-cols-[100%] min-h-[730px] bg-hero-about-surface text-hero-about-text overflow-clip isolate"
+        class="hero grid grid-cols-[100%] min-h-[630px] bg-hero-about-surface text-hero-about-text overflow-clip isolate"
         data-cmp="Hero"
       >
         <div class="container h-full">
-          <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center h-full py-8">
-            <div class="_hero-content flex flex-col gap-10">
+          <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-[2fr_3fr] items-start lg:items-center h-full ">
+            <div class="_hero-content flex flex-col gap-5 lg:gap-10 py-8">
               <div class="flex gap-2.5 items-center">
                 <IconSvg name="location" size={24} />
                 <span>Москва</span>
               </div>
 
-              <h1 class="_hero-title typo-h1 text-left text-balance">Успешно оказываем услуги 15 лет</h1>
+              <h1 class="_hero-title typo-h1 text-left text-balance">14 000<br>ответственных исполнителей</h1>
 
-              <p class="text-accent typo-h4">прямо сейчас со скидкой {brandData.main.adv_price_percent}%</p>
+              <p class="text-accent typo-h4">готовых взяться за выполнение вашей задачи</p>
 
               <div class="_hero-actions flex items-center gap-8">
                 <div class="_hero-actions-items">
@@ -77,7 +77,7 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
               </div>
             </div>
 
-            <div class="_hero-image">
+            <div class="_hero-image self-end">
               <img src="/images/hero-about.webp" alt="" fetchpriority="high" />
             </div>
           </div>

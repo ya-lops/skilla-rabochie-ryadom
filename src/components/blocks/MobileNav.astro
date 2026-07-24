@@ -94,12 +94,15 @@ const { brandData, links } = Astro.props;
 
     <div class="flex flex-col gap-8 py-8 px-4">
       <div class="flex justify-center">
-        <BlockMessengersLinks brandData={brandData} />
+        <BlockMessengersLinks brandData={brandData} class="py-2 px-3 rounded-4xl bg-surface-secondary text-text-secondary"/>
       </div>
 
       <div class="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-4 items-center">
-        <Button href="#personal" text="Личный кабинет" variant="secondary" inverse />
-        <Button href="#contact" text="Позвонить" variant="primary" inverse />
+        {/* Условие для отображения личного кабинета, нужно брать из админки */}
+        {/* сейчас просто написано чтото рандомное */}
+        {/* в SiteHeader.astro тоже */}
+        {brandData.main?.showPersonal && <Button href="#personal" text="Личный кабинет" variant="secondary" />}
+        <Button href="#contact" text="Позвонить" variant="primary" />
       </div>
     </div>
   </div>

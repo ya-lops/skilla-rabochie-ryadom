@@ -15,25 +15,20 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
 
 <section class="promo bg-promo-surface overflow-clip" data-cmp="Promo">
   <div class="container">
-    <div class="_promo-inner flex items-center justify-end lg:justify-between gap-7 max-w-[747px] mx-auto">
-      <div
-        class="_promo-value absolute left-[-15%] lg:left-[-70px] w-[200px] md:w-[541px] h-[33px] flex items-center justify-center rotate-[35deg] lg:rotate-[15deg] text-text-primary-inverse text-xl font-bold bg-surface-blur"
-      >
-        -{discount}%
-      </div>
-      <div class="_promo-description flex flex-col lg:flex-row lg:items-center lg:gap-8 py-4 lg:py-2">
-        <p class="text-promo-text-primary text-md font-bold">Только в сентябре</p>
-        <p class="text-promo-text-secondary typo-t4 font-medium">скидка {discount}% на все услуги</p>
+    <div class="_promo-inner flex items-center justify-between gap-2 max-w-[500px] mx-auto">
+      <div class="flex items-center gap-4">
+        <div
+          class="py-1 px-2 text-text-primary-inverse font-bold text-[12px] lg:text-[13px] rounded-xl bg-button-primary-surface shadow-[0px_15.18px_27.83px_0px_hsla(237,92%,67%,0.3)]"
+        >
+          -{discount}%
+        </div>
+        <div class="_promo-description flex flex-col">
+          <p class="text-promo-text-primary text-md font-bold">Только в сентябре</p>
+          <p class="text-promo-text-secondary typo-t4 font-medium">скидка {discount}% на все услуги</p>
+        </div>
       </div>
       <div class="_promo-actions py-2">
-        <Button
-          href={`/${firstServiceUrl}`}
-          class="h-[38px] [&_span]:hidden md:[&_span]:block px-2.5! lg:px-5!"
-          variant="primary"
-          inverse
-          arrow="right"
-          text="В каталог"
-        />
+        <Button href={`/${firstServiceUrl}`} class="!h-[38px]" variant="secondary" text="В каталог" />
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 ---
 import type { BrandData } from "@/types/brand";
+import IconSvg from "../IconSvg.astro";
 
 interface Props {
   brandData: BrandData;
@@ -11,47 +12,42 @@ const { brandData, type = "cards" } = Astro.props;
 const steps = [
   {
     title: "Делайте заказ по телефону",
-    image:
-      '<svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="23" y="10" width="38" height="64" rx="6" stroke="white" stroke-width="2"/><line x1="24" y1="19" x2="61" y2="19" stroke="white" stroke-width="2"/><line x1="24" y1="62" x2="61" y2="62" stroke="white" stroke-width="2"/><circle cx="42" cy="68" r="3" fill="white"/><rect x="37" y="13" width="10" height="3" rx="1.5" fill="white"/></svg>',
+    image: "phone-duo",
   },
   {
     title: "Выставляем счет и вы оплачиваете",
-    image:
-      '<svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 10H62C63.6569 10 65 11.3431 65 13V72.5859L61.3525 68.9385C60.6211 68.2073 59.4528 68.1543 58.6582 68.8164L54 72.6982L49.2803 68.7656C48.5386 68.1476 47.4614 68.1476 46.7197 68.7656L42 72.6982L37.2803 68.7656C36.5386 68.1476 35.4614 68.1476 34.7197 68.7656L30 72.6982L25.3418 68.8164C24.5472 68.1543 23.3789 68.2073 22.6475 68.9385L19 72.5859V13C19 11.3431 20.3431 10 22 10Z" stroke="white" stroke-width="2"/><line x1="20" y1="58" x2="65" y2="58" stroke="white" stroke-width="2" stroke-dasharray="4 4"/><rect x="30" y="23" width="16" height="3" rx="1.5" fill="white"/><rect x="30" y="29" width="24" height="3" rx="1.5" fill="white"/></svg>',
+    image: "price-duo",
   },
   {
     title: "Выполняем качественно работу",
-    image:
-      '<svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="path-1-inside-1_2042_12285" fill="white"><path d="M42.0303 13.791C57.6094 13.7913 70.2391 28.5255 70.2393 46.7012C70.2393 47.3981 70.2173 48.0902 70.1807 48.7764C63.2903 55.5768 53.2336 59.8651 42.0303 59.8652C30.8264 59.8652 20.7684 55.5772 13.8779 48.7764C13.8413 48.0902 13.8213 47.3981 13.8213 46.7012C13.8214 28.5254 26.451 13.791 42.0303 13.791Z"/></mask><path d="M42.0303 13.791L42.0303 11.791H42.0303V13.791ZM70.2393 46.7012H72.2393V46.7012L70.2393 46.7012ZM70.1807 48.7764L71.5856 50.1998L72.1366 49.656L72.1778 48.8829L70.1807 48.7764ZM42.0303 59.8652V61.8652H42.0303L42.0303 59.8652ZM13.8779 48.7764L11.8808 48.8829L11.922 49.656L12.473 50.1998L13.8779 48.7764ZM13.8213 46.7012L11.8213 46.7012V46.7012H13.8213ZM42.0303 13.791L42.0302 15.791C56.2267 15.7913 68.2391 29.3298 68.2393 46.7012L70.2393 46.7012L72.2393 46.7012C72.2391 27.7213 58.992 11.7913 42.0303 11.791L42.0303 13.791ZM70.2393 46.7012H68.2393C68.2393 47.3563 68.2186 48.0122 68.1835 48.6699L70.1807 48.7764L72.1778 48.8829C72.2159 48.1681 72.2393 47.4399 72.2393 46.7012H70.2393ZM70.1807 48.7764L68.7758 47.3529C62.2735 53.7703 52.7275 57.8651 42.0303 57.8652L42.0303 59.8652L42.0303 61.8652C53.7398 61.8651 64.3071 57.3833 71.5856 50.1998L70.1807 48.7764ZM42.0303 59.8652V57.8652C31.3325 57.8652 21.7851 53.7706 15.2829 47.3529L13.8779 48.7764L12.473 50.1998C19.7516 57.3838 30.3204 61.8652 42.0303 61.8652V59.8652ZM13.8779 48.7764L15.8751 48.6699C15.8402 48.0163 15.8213 47.3598 15.8213 46.7012H13.8213H11.8213C11.8213 47.4364 11.8424 48.1641 11.8808 48.8829L13.8779 48.7764ZM13.8213 46.7012L15.8213 46.7012C15.8214 29.3296 27.8337 15.791 42.0303 15.791V13.791V11.791C25.0683 11.791 11.8214 27.7211 11.8213 46.7012L13.8213 46.7012Z" fill="white" mask="url(#path-1-inside-1_2042_12285)"/><path d="M15.2313 48.92C12.7893 51.0439 12.2397 54.6215 13.9316 57.3804L20.5276 68.1366C21.6186 69.9156 23.5556 71 25.6425 71H59.3575C61.4444 71 63.3814 69.9156 64.4724 68.1366L70.5615 58.2072C72.5731 54.9268 72.0491 50.6912 69.2985 48" stroke="white" stroke-width="2"/><path d="M52.7645 16H31.2355C29.2368 16 27.5448 17.4754 27.2728 19.4556L25.6243 31.4556C25.2942 33.8586 27.1615 36 29.5871 36H54.4129C56.8385 36 58.7058 33.8586 58.3757 31.4556L56.7272 19.4556C56.4552 17.4754 54.7632 16 52.7645 16Z" fill="#64AAE7"/><path d="M59 36L56.7272 19.4556C56.4552 17.4754 54.7632 16 52.7645 16H31.2355C29.2368 16 27.5448 17.4754 27.2728 19.4556L25 36" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M45.6405 13H38.3595C36.2993 13 34.5761 14.5648 34.3781 16.6154L32 41.2353L37.0674 43.143C40.2469 44.34 43.7531 44.34 46.9326 43.143L52 41.2353L49.6219 16.6154C49.4239 14.5648 47.7006 13 45.6405 13Z" fill="#64AAE7"/><path d="M52 41L49.6246 16.6122C49.425 14.563 47.7024 13 45.6434 13H38.3566C36.2976 13 34.575 14.563 34.3754 16.6122L32 41" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>',
+    image: "box-duo",
   },
   {
     title: "Вы получаете документы",
-    image:
-      '<svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 10H47.4141C48.1781 10.0001 48.9133 10.2918 49.4697 10.8154L64.0557 24.5439C64.658 25.1109 65 25.9013 65 26.7285V71C65 72.6569 63.6569 74 62 74H22C20.3431 74 19 72.6569 19 71V13C19 11.3431 20.3431 10 22 10Z" stroke="white" stroke-width="2"/><path d="M48.5 10V23.5C48.5 24.6046 49.3954 25.5 50.5 25.5H65" stroke="white" stroke-width="2"/><rect x="26" y="54" width="16" height="3" rx="1.5" fill="white"/><rect x="26" y="60" width="24" height="3" rx="1.5" fill="white"/></svg>',
+    image: "doc-duo",
   },
 ];
 ---
 
-<section class="how-we-work py-8 md:py-10 lg:py-20 bg-surface-primary-inverse" data-cmp="HowWeWork">
+<section class="how-we-work py-8 md:py-10 lg:py-20" data-cmp="HowWeWork">
   <div class="container">
-    <div class="_how-we-work-inner">
-      <h2 class="_how-we-work-title pb-16 text-text-primary-inverse">Как мы работаем</h2>
+    <h2 class="_how-we-work-title pb-16 text-text-primary">Как мы работаем</h2>
 
-      <div class="_how-we-work-grid grid grid-cols-1 lg:grid-cols-4 gap-6">
-        {
-          steps.map((step: any, index: number) => (
-            <div class="_how-we-work_step flex lg:flex-col items-center lg:items-start gap-2 lg:gap-7 rounded-x bg-surface-primary overflow-clip">
-              <div class="_content p-8">
-                <div class="_number mb-6 text-text-tertiary text-left typo-h3">{index + 1}.</div>
-                <h3 class="_title typo-t1 text-left balance">{step.title}</h3>
-              </div>
-              <div class="flex shrink-0 order-last lg:order-1">
-                <Fragment set:html={step.image} />
-              </div>
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      {
+        steps.map((step: any, index: number) => (
+          <div class="relative flex lg:flex-col items-center lg:items-start gap-2 lg:gap-7 p-8 rounded-xl bg-surface-secondary-inverse overflow-clip isolate text-text-primary-inverse shadow-[0px_24px_54px_0px_hsla(237,92%,67%,0.3)]">
+            <div class="_content ">
+              <div class="_number mb-6 text-left typo-h3">{index + 1}.</div>
+              <h3 class="_title typo-t1 text-left balance">{step.title}</h3>
             </div>
-          ))
-        }
-      </div>
+            <div class="flex shrink-0">
+              <IconSvg name={step.image} size={90} />
+            </div>
+            <div class="_decorative absolute -z-1 left-[80%] lg:left-[60%] top-[-40%] lg:top-[60%] w-[max(33%,170px)] lg:w-[max(33%,270px)] aspect-square border-47 lg:border-54 border-surface-primary-inverse rounded-full" />
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

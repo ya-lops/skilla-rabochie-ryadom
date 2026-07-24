@@ -60,7 +60,7 @@ const workTime = [
             >
           </div>
 
-          <BlockMessengersLinks {brandData} class="text-text-secondary"/>
+          <BlockMessengersLinks {brandData} class="py-2 px-3 rounded-4xl bg-surface-secondary text-text-secondary"/>
 
           {
             workTime && (
@@ -121,7 +121,7 @@ const workTime = [
                     <li class="_footer-document flex items-baseline gap-2">
                       <span class="_footer-document-name flex gap-2">{document.name}</span>
                       <a
-                        class="_footer-document-format-link py-0.5 px-1.25 rounded-md border border-transparent bg-surface-secondary-inverse hover:border-outline hover:no-underline typo-label"
+                        class="_footer-document-format-link py-0.5 px-1.25 rounded-md border border-transparent bg-surface-secondary text-text-secondary hover:text-text-primary hover:no-underline typo-label"
                         href={`${STORAGE_PATH}${document.path}`}
                         download={document.filename}
                       >

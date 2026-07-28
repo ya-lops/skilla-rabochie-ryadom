@@ -5,31 +5,64 @@ import Button from "../ui/Button.astro";
 interface Props {
   brandData: BrandData;
 }
-
 const { brandData } = Astro.props;
-
-const discount = brandData.main.adv_price_percent;
-
 const firstServiceUrl = brandData.services[0].url.toLowerCase();
+
+const { action_sel, site_actions } = brandData.main;
+
+// "21 апреля"
+function formatRuDate(date: Date = new Date()): string {
+  return new Intl.DateTimeFormat("ru-RU", {
+    day: "numeric",
+    month: "long",
+  }).format(date);
+}
+
+function replaceDatePlaceholder(text: string): string {
+  return text.includes("{DATE}") ? text.replaceAll("{DATE}", formatRuDate()) : text;
+}
+
+// достаём число перед %
+function parseDiscount(text: string): number | null {
+  const match = text.match(/(\d+(?:[.,]\d+)?)\s*%/);
+  return match ? parseFloat(match[1].replace(",", ".")) : null;
+}
+
+let chosenAction: (typeof site_actions)[number] | undefined;
+
+if (action_sel === 1) {
+  // случайная акция при каждом заходе на страницу
+  chosenAction = site_actions?.[Math.floor(Math.random() * (site_actions?.length ?? 0))];
+} else {
+  // активная акция
+  chosenAction = site_actions?.find((a) => a.is_active === 1);
+}
+
+const description = chosenAction ? replaceDatePlaceholder(chosenAction.description) : null;
+const discount = description ? parseDiscount(description) : null;
 ---
 
-<section class="promo bg-promo-surface overflow-clip" data-cmp="Promo">
-  <div class="container">
-    <div class="_promo-inner flex items-center justify-between gap-2 max-w-[500px] mx-auto">
-      <div class="flex items-center gap-4">
-        <div
-          class="py-1 px-2 text-text-primary-inverse font-bold text-[12px] lg:text-[13px] rounded-xl bg-button-primary-surface shadow-[0px_15.18px_27.83px_0px_hsla(237,92%,67%,0.3)]"
-        >
-          -{discount}%
-        </div>
-        <div class="_promo-description flex flex-col">
-          <p class="text-promo-text-primary text-md font-bold">Только в сентябре</p>
-          <p class="text-promo-text-secondary typo-t4 font-medium">скидка {discount}% на все услуги</p>
+{
+  description && (
+    <section class="bg-promo-surface overflow-clip" data-cmp="Promo">
+      <div class="container">
+        <div class="flex items-center justify-between gap-2 max-w-[500px] mx-auto">
+          <div class="flex items-center gap-4">
+            {discount !== null && (
+              <div class="py-1 px-2 text-text-primary-inverse font-bold text-[12px] lg:text-[13px] rounded-xl bg-button-primary-surface shadow-[0px_15.18px_27.83px_0px_hsla(237,92%,67%,0.3)]">
+                -{discount}%
+              </div>
+            )}
+
+            <div class="flex flex-col">
+              <p class="text-promo-text-primary text-md font-bold">{description}</p>
+            </div>
+          </div>
+          <div class="py-2">
+            <Button href={`/${firstServiceUrl}`} class="!h-[38px]" variant="secondary" text="В каталог" />
+          </div>
         </div>
       </div>
-      <div class="_promo-actions py-2">
-        <Button href={`/${firstServiceUrl}`} class="!h-[38px]" variant="secondary" text="В каталог" />
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
+  )
+}

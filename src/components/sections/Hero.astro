@@ -22,16 +22,16 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
         data-cmp="Hero"
       >
         <div class="container h-full">
-          <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-[2fr_3fr] items-start lg:items-center h-full ">
-            <div class="_hero-content flex flex-col gap-5 lg:gap-10 py-8">
+          <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-[2fr_100px_2fr] items-start lg:items-center h-full ">
+            <div class="_hero-content flex flex-col gap-5 lg:gap-10 py-8 lg:col-start-1 lg:row-start-1 col-span-1">
               <div class="flex gap-2.5 items-center">
                 <IconSvg name="location" size={24} />
                 <span>Москва</span>
               </div>
 
-              <h1 class="_hero-title typo-h1 text-left text-balance">Закажи услуги грузчиков и разнорабочих</h1>
+              <h1 class="_hero-title typo-h1 text-left text-balance">Надежные исполнители для вашего бизнеса</h1>
 
-              <p class="text-accent typo-h4">прямо сейчас со скидкой {brandData.main.adv_price_percent}%</p>
+              <p class="text-accent typo-h4">Оперативный вывод на объект без кадровой рутины</p>
 
               <div class="_hero-actions flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8">
                 <div class="_hero-actions-items">
@@ -39,7 +39,7 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
                 </div>
               </div>
             </div>
-            <div class="_hero-image self-end">
+            <div class="_hero-image self-end lg:col-start-2 lg:row-start-1 col-span-2">
               <img class="pointer-events-none" src="/images/hero-main.webp" alt="" fetchpriority="high" />
             </div>
           </div>
@@ -59,7 +59,7 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
         data-cmp="Hero"
       >
         <div class="container h-full">
-          <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-[2fr_3fr] items-start lg:items-center h-full ">
+          <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center h-full ">
             <div class="_hero-content flex flex-col gap-5 lg:gap-10 py-8">
               <div class="flex gap-2.5 items-center">
                 <IconSvg name="location" size={24} />

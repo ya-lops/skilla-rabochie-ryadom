@@ -37,7 +37,7 @@ const showDiscount = hasDiscount(discountPercent);
 
     <div class="_price-table-inner grid grid-col-1 lg:grid-cols-[360px_2fr] items-start gap-10">
       <div
-        class="_service-list flex gap-4 lg:gap-0 lg:flex-col pb-2 lg:pb-0 -mx-4 lg:mx-[initial] px-4 overflow-auto rounded-xl lg:shadow-[0px_4px_24px_0px_hsla(0,0%,36%,0.1)]";
+        class="_service-list flex gap-4 lg:gap-0 lg:flex-col pb-2 lg:pb-0 -mx-4 lg:mx-[initial] p-4 overflow-auto rounded-xl lg:shadow-[0px_4px_24px_0px_hsla(0,0%,36%,0.1)]";
 
       >
         {
@@ -78,7 +78,7 @@ const showDiscount = hasDiscount(discountPercent);
                   <div class="typo-h5 p-6 text-center">Обычная цена</div>
                 </div>
 
-                <div class="_discount-highlighter hidden lg:block absolute -z-1 top-3 bottom-3 left-3 right-3 col-start-2 col-end-3 rounded-lg pointer-events-none -mx-2 bg-table-highlight opacity-85 mix-blend-multiply" />
+                <div class="_discount-highlighter hidden lg:block absolute -z-1 top-3 bottom-3 left-3 right-3 col-start-2 col-end-3 rounded-lg pointer-events-none -mx-2 bg-table-highlight opacity-85 mix-blend-hard-light" />
 
                 {currentService.services
                   .filter((subService) => subService.name)
@@ -139,7 +139,7 @@ const showDiscount = hasDiscount(discountPercent);
         background: var(--color-accent);
 
         @media (width >= 64rem) {
-          height: 100%;
+          height: 46px;
           width: 3px;
         }
       }

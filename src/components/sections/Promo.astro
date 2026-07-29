@@ -46,7 +46,7 @@ const discount = description ? parseDiscount(description) : null;
   description && (
     <section class="bg-promo-surface overflow-clip" data-cmp="Promo">
       <div class="container">
-        <div class="flex items-center justify-between gap-2 max-w-[500px] mx-auto">
+        <div class="flex items-center justify-between gap-2 max-w-[800px] mx-auto">
           <div class="flex items-center gap-4">
             {discount !== null && (
               <div class="py-1 px-2 text-text-primary-inverse font-bold text-[12px] lg:text-[13px] rounded-xl bg-button-primary-surface shadow-[0px_15.18px_27.83px_0px_hsla(237,92%,67%,0.3)]">
@@ -54,11 +54,11 @@ const discount = description ? parseDiscount(description) : null;
               </div>
             )}
 
-            <div class="flex flex-col">
-              <p class="text-promo-text-primary text-md font-bold">{description}</p>
+            <div class="py-2">
+              <p class="text-promo-text-primary typo-t3 lg:typo-t1">{description}</p>
             </div>
           </div>
-          <div class="py-2">
+          <div class="py-2 shrink-0">
             <Button href={`/${firstServiceUrl}`} class="!h-[38px]" variant="secondary" text="В каталог" />
           </div>
         </div>

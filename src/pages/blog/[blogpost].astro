@@ -5,12 +5,20 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs.astro";
 import Blog from "@/components/sections/Blog.astro";
 
 import { getBrandData } from "@/lib/api";
+import { getBlogPostByUrl } from "@/lib/blogs";
 
 const { blogpost } = Astro.params;
 
 const brandData = await getBrandData();
 
-const article = brandData.blogs?.find((b) => b.url === blogpost);
+let article = brandData.blogs?.find((b) => b.url === blogpost);
+
+if (!article) {
+  const postData = await getBlogPostByUrl(blogpost);
+  if (postData) {
+    article = postData;
+  }
+}
 
 if (!article) {
   return Astro.rewrite("/404");
@@ -77,7 +85,7 @@ if (!article) {
     }
 
     & p {
-      @apply typo-t1 max-w-[45.625rem] mt-6;
+      @apply typo-t2 max-w-[45.625rem] mt-6;
     }
 
     & img {
@@ -85,7 +93,7 @@ if (!article) {
     }
 
     & :where(ol, ul) {
-      @apply list-inside typo-t1 mt-6;
+      @apply list-inside typo-t2 mt-6;
 
       li {
         @apply mt-2 text-text-secondary;
